@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+$colors:(
+    call:(
+        100:rgba(231,129,107),
+        200:rgb(255,173,155)
+    ),
+    dark:(
+        100:rgb(29, 28, 30),
+        200:rgb(51, 49, 54)
+    ),
+    light:(
+        100:rgb(255, 255, 255),
+        200:rgb(241, 243, 245)
+    )
+);
+*,*::after, *::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    @each $clrs, $vls in $colors{
+        @each $clr, $vl in $vls{
+            --#{$clrs}-#{$clr}:#{$vl};
+        }
+    }
+}
+
+html,body{
+    font-family: "Jost";
+}
+
+.heading__lg{
+    font-size: 48px;
+    font-weight:600;
+    line-height:48px;
+}
+.heading__md{
+    font-size: 40px;
+    font-weight:600;
+    line-height:48px; 
+    letter-spacing: 2px;
+}
+.heading__sm{
+    font-size: 20px;
+    font-weight:600;
+    line-height:26px; 
+    letter-spacing: 5px;
+}
+.text__body{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height:26px; 
+}
+.-uppercase{
+    text-transform: uppercase;
+}
+.-rounded{
+    border-radius:0.5rem;
+}
+a{
+    text-decoration:none;
+    transition: all 0.5s;
+    &:hover{
+        &-full{
+            background:var(--light-200);
+        }
+    }
+    &-full{
+        background: var(--light-100);
+        color: var(--dark-100);
+    }
+}
