@@ -14,8 +14,8 @@ $colors:(
     )
 );
 *,*::after, *::before{
-    margin:0;
-    padding:0;
+    // margin:0;
+    // padding:0;
     box-sizing: border-box;
 }
 
@@ -29,8 +29,13 @@ $colors:(
 
 html,body{
     font-family: "Jost";
-}
+    background: var(--call-100);
 
+}
+img{
+    width: 100%;
+    display: block;
+}
 .heading__lg{
     font-size: 48px;
     font-weight:600;
@@ -59,16 +64,73 @@ html,body{
 .-rounded{
     border-radius:0.5rem;
 }
+.padding{
+    padding: 1rem;
+}
 a{
     text-decoration:none;
     transition: all 0.5s;
-    &:hover{
-        &-full{
-            background:var(--light-200);
-        }
+    color: var(--dark-100);
+    text-transform: uppercase;
+    font-weight: 600;
+    
+    display: inline-block;
+    &.-inline{
+        color: var(--light-100);
     }
-    &-full{
+    &.-inline-dark{
+        color: var(--dark-100);
+    }
+    &.-full{
         background: var(--light-100);
         color: var(--dark-100);
+    }
+    &.-call{
+        background: var(--call-100);
+        color: var(--light-100);
+    }
+    &:hover{
+        background:var(--call-200);
+    }
+}
+label{
+    position:relative;
+    width: fit-content;
+    display: block;
+}
+input{
+    border: none;
+    border-block-end: 1px solid var(--light-100);
+    background: transparent;
+    outline: transparent;
+    transition: all 0.2s;
+    position: relative;
+    color:var(--light-100);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height:26px;
+    letter-spacing: 1px; 
+    &:focus{
+        border-width: 3px;      
+    }
+    &:empty{
+       & + .input__info{
+            position:absolute;
+            right: 0;
+            top: 50%;
+            color:currentColor;
+            transform:translateY(-50%);
+            font-size: smaller;
+            color: var(--light-100);
+            font-style: italic;
+            font-weight: 200;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+    &::placeholder{
+        color:var(--light-100);
     }
 }

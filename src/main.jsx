@@ -10,7 +10,7 @@ import Layout from './Layout/Layout'
 import Start from './Pages/Start'
 import ErrorPage from './Pages/ErrorPage'
 
-import './index.scss'
+import './index.css'
 
 
 const router = createBrowserRouter([
