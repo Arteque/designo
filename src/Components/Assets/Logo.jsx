@@ -1,11 +1,12 @@
-const Logo = ({header}) => {
+const Logo = ({header, className}) => {
 
     
 
       return (
-        <div className="logo" style={{
-            // maxWidth:'202px'
-            maxWidth:'60%'
+        <div className={`${className}`} style={{
+            width:'60%',
+            maxWidth:'202px',
+            transform:'translateY(2px)'
         }}>
             
             {

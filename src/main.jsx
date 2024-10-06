@@ -11,6 +11,9 @@ import Start from './Pages/Start'
 import ErrorPage from './Pages/ErrorPage'
 
 import './index.css'
+import OurCompany from './Pages/OurCompany'
+import Contact from './Pages/Contact'
+import Locations from './Pages/Locations'
 
 
 const router = createBrowserRouter([
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Start />
+      },
+      {
+        path:"/locations",
+        element:<Locations />
+      },
+      {
+        path:"/aboutus",
+        element:<OurCompany />
+      },
+      {
+        path:"/contact",
+        element: <Contact />
       }
     ]
   }
