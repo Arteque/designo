@@ -17,12 +17,16 @@ html, body {
   font-family: "Jost";
   margin: 0;
   padding: 0;
-  letter-spacing: 2px;
 }
 
 img {
   width: 100%;
   display: block;
+}
+
+ul[class] {
+  list-style: none;
+  padding: 0;
 }
 
 .heading__lg {
@@ -89,7 +93,7 @@ img {
           align-items: center;
 }
 
-a {
+.btn {
   text-decoration: none;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -97,37 +101,48 @@ a {
   text-transform: uppercase;
   font-weight: 600;
   display: inline-block;
+  border: none;
+  background: transparent;
 }
-a.-inline {
+.btn.-inline {
   color: var(--light-100);
 }
-a.-inline-dark {
+.btn.-inline-dark {
   color: var(--dark-100);
 }
-a.-full {
+.btn.-full {
   background: var(--light-100);
   color: var(--dark-100);
 }
-a.-call {
+.btn.-call {
   background: var(--call-100);
   color: var(--light-100);
 }
-a:hover:not(.main-header a) {
+.btn:hover:not(.main-header a) {
   background: var(--call-200);
 }
 
 label {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   display: block;
 }
+label::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  bottom: 0;
+  inset-inline: 0;
+  background-color: var(--light-100);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+label:has(input:focus)::after {
+  height: 3px;
+}
 
-input {
+input, textarea {
   border: none;
-  -webkit-border-after: 1px solid var(--light-100);
-          border-block-end: 1px solid var(--light-100);
   background: transparent;
   outline: transparent;
   -webkit-transition: all 0.2s;
@@ -138,11 +153,10 @@ input {
   font-weight: 400;
   line-height: 26px;
   letter-spacing: 1px;
+  margin-block: 1rem;
+  width: 100%;
 }
-input:focus {
-  border-width: 3px;
-}
-input:empty + .input__info {
+input:empty + .input__info, textarea:empty + .input__info {
   position: absolute;
   right: 0;
   top: 50%;
@@ -164,20 +178,27 @@ input:empty + .input__info {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: var(--light-100);
 }
-input::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: var(--light-100);
 }
-input:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: var(--light-100);
 }
-input::-ms-input-placeholder {
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   color: var(--light-100);
 }
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: var(--light-100);
+}
+
+textarea {
+  width: 100%;
+  max-height: 500px;
+  resize: vertical;
+  font-family: "Jost";
 }
 
 header.main-header {
@@ -258,20 +279,99 @@ body[data-menu=open] .main-header .main-header__nav {
   pointer-events: auto;
 }
 
-#hero {
+.hero {
   background-color: var(--call-100);
   color: var(--light-100);
-  height: 90svh;
   overflow: hidden;
   text-align: center;
+}
+.hero .container {
   -webkit-padding-before: 50px;
           padding-block-start: 50px;
+  background: url("./shared/tablet/bg-pattern-design-pages-intro-tablet.svg");
+  background-position: 0% -17%;
+  background-size: 600%;
+  background-repeat: no-repeat;
 }
-#hero h2 {
+.hero.subpage {
+  -webkit-padding-after: 50px;
+          padding-block-end: 50px;
+}
+.hero.subpage .container {
+  background-position: 100%;
+  background-size: 300%;
+}
+.hero.start {
+  height: 90svh;
+}
+.hero.nopaddingtop {
+  -webkit-padding-before: 0;
+          padding-block-start: 0;
+}
+.hero h2 {
   font-size: 30px;
 }
 
 .container {
   padding-inline: 1rem;
   max-width: 1235px;
+}
+
+.main-footer {
+  background: var(--dark-100);
+  color: var(--light-100);
+  text-align: center;
+  -webkit-padding-before: 2rem;
+          padding-block-start: 2rem;
+}
+.main-footer .logo {
+  padding-block: 1rem 2rem;
+  display: block;
+  margin-inline: auto;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative;
+}
+.main-footer .logo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  height: 1px;
+  background: var(--light-200);
+  opacity: 0.5;
+}
+.main-footer .logo img {
+  max-width: 60%;
+  margin-inline: auto;
+}
+.main-footer nav {
+  -webkit-margin-before: 2rem;
+          margin-block-start: 2rem;
+}
+.main-footer nav ul {
+  list-style: none;
+  padding: 0;
+}
+.main-footer nav ul a {
+  color: var(--light-100);
+  margin-block: 0.5rem;
+  font-weight: 300;
+}
+.main-footer address, .main-footer .contact {
+  color: var(--light-200);
+  opacity: 0.5;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+  font-style: normal;
+}
+.main-footer .social {
+  padding: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  gap: 1rem;
+  -webkit-padding-after: 2rem;
+          padding-block-end: 2rem;
 }/*# sourceMappingURL=index.css.map */

@@ -5,7 +5,7 @@ import HeroSection from "../Components/HeroSection"
 const Start = () => {
   return (
     <>
-      <HeroSection className="hero" id="hero">
+      <HeroSection className="start" id="hero">
          <Container>
               <div className="content">
                   <h2 className="heading__md">Award-winning custom designs and digital branding solutions</h2>

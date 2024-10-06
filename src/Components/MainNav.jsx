@@ -5,13 +5,13 @@ const MainNav = () => {
     <nav className="main-header__nav">
         <ul>
             <li>
-                <Link to="aboutus">Our Compagny</Link>
+                <Link to="aboutus" className="btn">Our Compagny</Link>
             </li>
             <li>
-                <Link to="locations">Locations</Link>
+                <Link to="locations" className="btn">Locations</Link>
             </li>
             <li>
-                <Link to="contact">Contact</Link>
+                <Link to="contact" className="btn">Contact</Link>
             </li>
         </ul>
     </nav>

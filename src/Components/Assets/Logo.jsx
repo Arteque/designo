@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom"
 const Logo = ({header, className}) => {
 
     
 
       return (
-        <div className={`${className}`} style={{
+        <div className={`logo ${className}`} style={{
             width:'60%',
             maxWidth:'202px',
             transform:'translateY(2px)'
         }}>
             
+            <Link to="/" >
             {
                 header ? (
                     <img className="logo__image--dark" src="./shared/desktop/logo-dark.png" alt="Design Logo" />
@@ -16,6 +18,7 @@ const Logo = ({header, className}) => {
                     <img className="logo__image--light" src="./shared/desktop/logo-light.png" alt="Design Logo" />
                 )
             }
+            </Link>
             
         </div>
       ) 

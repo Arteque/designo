@@ -1,8 +1,12 @@
+import HeroSection from "../Components/HeroSection"
+import Container from "../Components/Assets/Container"
 const Locations = () => {
   return (
-    <div>
-        
-    </div>
+    <HeroSection className="locations" id="locations">
+        <Container>
+            
+        </Container>
+    </HeroSection>
   )
 }
 
