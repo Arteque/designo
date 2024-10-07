@@ -3,7 +3,7 @@ import HeroSection from "../Components/HeroSection"
 
 const Contact = () => {
   return (
-    <HeroSection className="contact" id="contact">
+    <HeroSection className="contact bg-call-100" id="contact">
         <Container>
             <div className="content">
                 <h2>Contact Us</h2>
