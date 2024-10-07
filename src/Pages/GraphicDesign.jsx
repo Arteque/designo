@@ -2,8 +2,8 @@ import { useLocation } from "react-router-dom"
 import { useEffect } from "react"
 import Container from "../Components/Assets/Container"
 import DeisgnTypes from "../Components/Assets/DeisgnTypes"
-const WebDesign = () => {
 
+const GraphicDesign = () => {
     const location = useLocation()
 
     useEffect(() => {
@@ -16,7 +16,8 @@ const WebDesign = () => {
           <DeisgnTypes />
       </Container>
     </section>
-  )
+    
+)
 }
 
-export default WebDesign
+export default GraphicDesign

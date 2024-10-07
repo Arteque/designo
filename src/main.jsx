@@ -15,6 +15,8 @@ import OurCompany from './Pages/OurCompany'
 import Contact from './Pages/Contact'
 import Locations from './Pages/Locations'
 import WebDesign from './Pages/WebDesign'
+import AppDesign from './Pages/AppDesign'
+import GraphicDesign from './Pages/GraphicDesign'
 
 
 const router = createBrowserRouter([
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path:"/webdesign",
         element: <WebDesign />
+      },
+      {
+        path:"/appdesign",
+        element: <AppDesign />
+      },
+      {
+        path:"/graphicdesign",
+        element: <GraphicDesign />
       }
     ]
   }

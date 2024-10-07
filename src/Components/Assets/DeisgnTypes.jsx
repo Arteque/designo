@@ -2,18 +2,12 @@
 import CardShield from "../CardShield"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
+
+
+
 const DeisgnTypes = () => {
 
-const location = useLocation()
-
-const [pathName, setPathName] = useState(null)
-
-useEffect(() => {
-    setPathName(location.pathname.replace(/[/]/g,""))
-    console.log("const: "+pathName, "path:"+location.pathname)
-},[location.pathname])
-
-    const types = [
+    const designtypes = [
         {
             id:"1",
             name:"Web Design",
@@ -37,19 +31,32 @@ useEffect(() => {
         },
     ]
 
+    const location = useLocation()
+    const [pathName, setPathName] = useState(null)
+
+   useEffect(() => {
+        setPathName(location.pathname.replace(/[/]/g,""))
+   },[])
+
  return(
-    types && types.map(item => {
-        // item.path !== pathName && (
-            <>
-                <CardShield 
-                className={item.class}
-                cardTitle={item.name}
-                url={item.path}
-                linkText={item.pathtext}
-                />
-            </> 
-        // )
-     })
+    <div className="grid-container">
+            
+            {
+                designtypes && (
+                    designtypes.map(item => (
+                        pathName !== item.path && (
+                            <CardShield 
+                                className={item.class}
+                                cardTitle={item.name}
+                                url={`/${item.path}`}
+                                linkText={item.pathtext}
+                            />
+                        )
+                    ))
+                )
+            }
+            
+    </div>
  )
 }
 
