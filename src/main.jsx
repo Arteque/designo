@@ -14,6 +14,7 @@ import './index.css'
 import OurCompany from './Pages/OurCompany'
 import Contact from './Pages/Contact'
 import Locations from './Pages/Locations'
+import WebDesign from './Pages/WebDesign'
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path:"/contact",
         element: <Contact />
+      },
+      {
+        path:"/webdesign",
+        element: <WebDesign />
       }
     ]
   }

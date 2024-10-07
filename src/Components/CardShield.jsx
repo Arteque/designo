@@ -4,7 +4,7 @@ const ST = {
     textAlign:'center'
 }
 
-const CardShield = ({cardTitle, url, linkText, className}) => {
+const CardShield = ({cardTitle, url, linkText, className,cardtitle}) => {
   return (
     <div className={`card-shield rounded ${className}`}
         style={{backgroundSize:'cover',backgroundRepeat:'no-repeat',
@@ -12,6 +12,7 @@ const CardShield = ({cardTitle, url, linkText, className}) => {
     display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center',
     marginBlock:'2em'
     }}
+    datatitle={cardtitle}
     >
         <h2 className="text-light-100 uppercase">{cardTitle}</h2>
         <Link to={url}

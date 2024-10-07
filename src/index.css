@@ -274,7 +274,7 @@ textarea {
 
 header.main-header {
   z-index: 1000;
-  background-color: var(--light-100);
+  background-color: var(--light-200);
   position: relative;
   padding-block: 2em;
 }
