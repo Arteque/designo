@@ -31,7 +31,7 @@ const Start = () => {
       <section className="skills" id="skills">
         <Container>
 
-            <Card 
+            <Card className="small-image"
                 headerChilds={
                   <img src="./home/desktop/illustration-passionate.svg" alt="Passionate" />
                 }
@@ -45,7 +45,7 @@ const Start = () => {
                 
                 }
               />
-            <Card 
+            <Card className="small-image"
                 headerChilds={
                   <img src="./home/desktop/illustration-resourceful.svg" alt="Resourceful" />
                 }
@@ -59,7 +59,7 @@ const Start = () => {
                 
                 }
               />
-            <Card 
+            <Card className="small-image"
                 headerChilds={
                   <img src="./home/desktop/illustration-friendly.svg" alt="Friendly" />
                 }

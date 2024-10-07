@@ -1,6 +1,6 @@
-const Card = ({headerChilds, bodyChilds, footerChilds}) => {
+const Card = ({className, headerChilds, bodyChilds, footerChilds}) => {
   return (
-    <div className="card">
+    <div className={`card ${className}`}>
         <div className="card__header">
             {headerChilds}
         </div>
