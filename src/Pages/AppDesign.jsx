@@ -51,8 +51,8 @@ const AppDesign = () => {
          <HeroSection className="page bg-call-100" id="webdesign">
             <Container>
                 <div className="content">
-                    <h2>App Design</h2>
-                    <p>
+                    <h2 className="heading__md">App Design</h2>
+                    <p className="text__body">
                     We build websites that serve as powerful marketing tools and bring memorable brand experiences.
                     </p>
                 </div>
@@ -62,7 +62,7 @@ const AppDesign = () => {
             <Container>
                 {
                     data && data.map(item => (
-                        <Card className="rounded" key={item.id}
+                        <Card className="rounded bg-call-300" key={item.id}
                         headerChilds={
                         <img src={`./app-design/desktop/${item.imgSrc}`} alt={item.title} />
                         }
@@ -70,7 +70,7 @@ const AppDesign = () => {
                         <h2 className="heading__lg uppercase text-call-100">{item.title}</h2>
                         }
                         footerChilds={
-                        <p>
+                        <p className="padding">
                             {item.text}
                         </p>
                         

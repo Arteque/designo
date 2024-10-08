@@ -51,7 +51,7 @@ const GraphicDesign = () => {
             data && data.map(item => (
                 <Card className="rounded" key={item.id}
                 headerChilds={
-                <img src={`./graphicv -design/desktop/${item.imgSrc}`} alt={item.title} />
+                <img src={`./graphic-design/desktop/${item.imgSrc}`} alt={item.title} />
                 }
                 bodyChilds={
                 <h2 className="heading__lg uppercase text-call-100">{item.title}</h2>
