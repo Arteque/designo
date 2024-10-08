@@ -22,10 +22,12 @@ useEffect(() => {
 },[location.pathname])
 
   return (
-    <header className="main-header container flex -between -items-center padding">
-            <Logo header={true} className="main-header__logo"/>
-            <Burger open={handleMenuState} btnState={menuState} className="main-header__burger"/>
-            <MainNav />
+    <header className="main-header">
+            <div className="container flex -between -items-center padding">
+              <Logo header={true} className="main-header__logo"/>
+              <Burger open={handleMenuState} btnState={menuState} className="main-header__burger"/>
+              <MainNav />
+            </div>
     </header>
   )
 }

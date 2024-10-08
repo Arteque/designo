@@ -8,6 +8,45 @@ import CallCard from "../Components/CallCard"
 
 const WebDesign = () => {
 
+  const data = [
+    {
+      id:1,
+      imgSrc: './web-design/desktop/image-express.jpg',
+      title: 'Express',
+      text:'A multi-carrier shipping website for ecommerce businesses'
+    },
+    {
+      id:2,
+      imgSrc: './web-design/desktop/image-transfer.jpg',
+      title: 'Transfer',
+      text:'Site for low-cost money transfers and sending money within seconds'
+    },
+    {
+      id:3,
+      imgSrc: './web-design/desktop/image-photon.jpg',
+      title: 'Photon',
+      text:'A state-of-the-art music player with high-resolution audio and DSP effects'
+    },
+    {
+      id:4,
+      imgSrc: './web-design/desktop/image-builder.jpg',
+      title: 'Builder',
+      text:'Connects users with local contractors based on their location'
+    },
+    {
+      id:5,
+      imgSrc: './web-design/desktop/image-blogr.jpg',
+      title: 'Blogr',
+      text:'Blogr is a platform for creating an online blog or publication'
+    },
+    {
+      id:6,
+      imgSrc: './web-design/desktop/image-camp.jpg',
+      title: 'Camp',
+      text:'Get expert training in coding, data, design, and digital marketing'
+    },
+  ]
+
     const location = useLocation()
 
     useEffect(() => {
@@ -28,90 +67,24 @@ const WebDesign = () => {
       </HeroSection>
       <section className="projects" id="projects">
         <Container>
-          <Card
-              headerChilds={
-                <img src="./web-design/desktop/image-express.jpg" alt="Express" />
-              }
-              bodyChilds={
-                <h2 className="heading__lg uppercase text-call-100">Express</h2>
-              }
-              footerChilds={
-                <p>
-                  A multi-carrier shipping website for ecommerce businesses
-                </p>
-              
-              }
-            />
-          <Card
-              headerChilds={
-                <img src="./web-design/desktop/image-transfer.jpg" alt="Transfer" />
-              }
-              bodyChilds={
-                <h2 className="heading__lg uppercase text-call-100">Transfer</h2>
-              }
-              footerChilds={
-                <p>
-                  Site for low-cost money transfers and sending money within seconds
-                </p>
-              
-              }
-            />
-          <Card
-              headerChilds={
-                <img src="./web-design/desktop/image-photon.jpg" alt="Photon" />
-              }
-              bodyChilds={
-                <h2 className="heading__lg uppercase text-call-100">Photon</h2>
-              }
-              footerChilds={
-                <p>
-                 A state-of-the-art music player with high-resolution audio and DSP effects
-                </p>
-              
-              }
-            />
-          <Card
-              headerChilds={
-                <img src="./web-design/desktop/image-builder.jpg" alt="Builder" />
-              }
-              bodyChilds={
-                <h2 className="heading__lg uppercase text-call-100">Builder</h2>
-              }
-              footerChilds={
-                <p>
-                  Connects users with local contractors based on their location
-                </p>
-              
-              }
-            />
-          <Card
-              headerChilds={
-                <img src="./web-design/desktop/image-blogr.jpg" alt="Bloger" />
-              }
-              bodyChilds={
-                <h2 className="heading__lg uppercase text-call-100">Bloger</h2>
-              }
-              footerChilds={
-                <p>
-                  Blogr is a platform for creating an online blog or publication
-                </p>
-              
-              }
-            />
-          <Card
-              headerChilds={
-                <img src="./web-design/desktop/image-camp.jpg" alt="Camp" />
-              }
-              bodyChilds={
-                <h2 className="heading__lg uppercase text-call-100">Camp</h2>
-              }
-              footerChilds={
-                <p>
-                  Get expert training in coding, data, design, and digital marketing
-                </p>
-              
-              }
-            />
+          {
+            data && data.map(item => (
+                <Card className="rounded" key={item.id}
+                headerChilds={
+                  <img src={item.imgSrc} alt={item.title} />
+                }
+                bodyChilds={
+                  <h2 className="heading__lg uppercase text-call-100">{item.title}</h2>
+                }
+                footerChilds={
+                  <p>
+                    {item.text}
+                  </p>
+                
+                }
+              />
+            ))
+          }
         </Container>
       </section>
       <section className="services" id="services">

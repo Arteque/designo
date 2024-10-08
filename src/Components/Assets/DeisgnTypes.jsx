@@ -45,7 +45,7 @@ const DeisgnTypes = () => {
                 designtypes && (
                     designtypes.map(item => (
                         pathName !== item.path && (
-                            <CardShield 
+                            <CardShield key={item.id}
                                 className={item.class}
                                 cardTitle={item.name}
                                 url={`/${item.path}`}

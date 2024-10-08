@@ -3,8 +3,43 @@ import { useEffect } from "react"
 import Container from "../Components/Assets/Container"
 import DeisgnTypes from "../Components/Assets/DeisgnTypes"
 import HeroSection from "../Components/HeroSection"
+import Card from "../Components/Card"
 
 const AppDesign = () => {
+
+    const data = [
+        {
+            id:1,
+            imgSrc:"image-airfilter.jpg",
+            title:"Airfilter",
+            text:"Solving the problem of poor indoor air quality by filtering the air"
+        },
+        {
+            id:2,
+            imgSrc:"image-eyecam.jpg",
+            title:"Eyecam",
+            text:"Product that lets you edit your favorite photos and videos at any time"
+        },
+        {
+            id:3,
+            imgSrc:"image-faceit.jpg",
+            title:"Faceit",
+            text:"Get to meet your favorite internet superstar with the faceit app"
+        },
+        {
+            id:4,
+            imgSrc:"image-todo.jpg",
+            title:"Todo",
+            text:"A todo app that features cloud sync with light and dark mode"
+        },
+        {
+            id:5,
+            imgSrc:"image-loopstudios.jpg",
+            title:"loopstudios",
+            text:"A VR experience app made for Loopstudios"
+        }
+    ]
+
     const location = useLocation()
 
     useEffect(() => {
@@ -25,7 +60,24 @@ const AppDesign = () => {
         </HeroSection>
         <section className="projects" id="projects">
             <Container>
-                
+                {
+                    data && data.map(item => (
+                        <Card className="rounded" key={item.id}
+                        headerChilds={
+                        <img src={`./app-design/desktop/${item.imgSrc}`} alt={item.title} />
+                        }
+                        bodyChilds={
+                        <h2 className="heading__lg uppercase text-call-100">{item.title}</h2>
+                        }
+                        footerChilds={
+                        <p>
+                            {item.text}
+                        </p>
+                        
+                        }
+                    />
+                    ))
+                }
             </Container>
         </section>
         <section className="services" id="services">
