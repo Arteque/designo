@@ -92,21 +92,26 @@ address {
 }
 
 .heading__lg {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 48px;
+  font-size: 30px;
+  font-weight: 400;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .heading__lg {
     font-size: 48px;
+    letter-spacing: 2px;
   }
 }
 
 .heading__md {
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: 2px;
+}
+@media screen and (min-width: 768px) {
+  .heading__md {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 2px;
+  }
 }
 
 .heading__sm {
@@ -120,6 +125,7 @@ address {
   font-size: 1em;
   font-weight: 400;
   line-height: 26px;
+  margin-block: 2em;
 }
 
 .uppercase {
@@ -272,6 +278,20 @@ textarea {
   font-family: "Jost";
 }
 
+.container {
+  margin-inline: 1em;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 689px !important;
+    margin-inline: auto;
+  }
+}
+
+main .container:not(.hero .container) {
+  margin-block: 4em;
+}
+
 header.main-header {
   z-index: 1000;
   background-color: var(--light-200);
@@ -279,6 +299,7 @@ header.main-header {
   padding-block: 2em;
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 @media screen and (min-width: 768px) {
   header.main-header {
@@ -322,7 +343,7 @@ header .main-header__nav ul a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 1em;
+    gap: 2em;
   }
   header .main-header__nav ul a {
     color: var(--dark-100);
@@ -363,18 +384,6 @@ body[data-menu=open] .main-header .main-header__nav {
   pointer-events: auto;
 }
 
-main .container:not(.hero .container) {
-  margin-block: 120px;
-  margin-inline: 1rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .container, .card, .call-card .call-card__container {
-    max-width: 1285px;
-    margin-inline: auto !important;
-  }
-}
-
 .hero {
   color: var(--light-100);
   overflow: hidden;
@@ -387,9 +396,10 @@ main .container:not(.hero .container) {
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 768px) {
-  .hero .container {
-    max-width: 500px;
+  .hero {
+    width: 689px;
     margin-inline: auto;
+    border-radius: 1rem;
   }
 }
 .hero.subpage {
@@ -400,13 +410,10 @@ main .container:not(.hero .container) {
   background-position: 100%;
   background-size: 300%;
 }
-.hero.start {
-  height: 100vh;
-}
 .hero.start .media img {
-  scale: 1.3;
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
+  scale: 2;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
 }
 .hero.locations .block-media {
   -webkit-margin-after: 2em;
@@ -432,11 +439,6 @@ main .container:not(.hero .container) {
           padding-block-start: 0;
 }
 
-.container {
-  padding-inline: 1em;
-  max-width: 1235px;
-}
-
 .call-card {
   position: relative;
 }
@@ -448,7 +450,7 @@ main .container:not(.hero .container) {
   z-index: 0;
 }
 .call-card .call-card__container {
-  margin-inline: 2em;
+  margin-inline: 1em;
   z-index: 10;
   position: relative;
   padding: 2em;
@@ -540,7 +542,8 @@ main .container:not(.hero .container) {
   }
 }
 .card-shield:hover::after {
-  opacity: 0;
+  background-color: #000000;
+  opacity: 0.7;
 }
 .card-shield::after {
   content: "";
@@ -549,6 +552,10 @@ main .container:not(.hero .container) {
   position: absolute;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
+}
+.card-shield:first-of-type::after {
+  background-color: #000000;
+  opacity: 0.7;
 }
 .card-shield h2, .card-shield a {
   z-index: 10;

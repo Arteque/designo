@@ -23,7 +23,7 @@ useEffect(() => {
 
   return (
     <header className="main-header">
-            <div className="container flex -between -items-center padding">
+            <div className="container flex -between -items-center">
               <Logo header={true} className="main-header__logo"/>
               <Burger open={handleMenuState} btnState={menuState} className="main-header__burger"/>
               <MainNav />

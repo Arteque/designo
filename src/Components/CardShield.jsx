@@ -14,7 +14,7 @@ const CardShield = ({cardTitle, url, linkText, className,cardtitle}) => {
     }}
     datatitle={cardtitle}
     >
-        <h2 className="text-light-100 uppercase">{cardTitle}</h2>
+        <h2 className="heading__md text-light-100 uppercase">{cardTitle}</h2>
         <Link to={url}
         className="btn -inline" style={{textAlign: ST.textAlign}}
         >
