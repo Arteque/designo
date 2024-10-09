@@ -17,8 +17,8 @@ const OurCompany = () => {
         </div>
         <Container>
             <div className="content">
-                <h2>About Us</h2>
-                <p>
+                <h2 className="heading__lg">About Us</h2>
+                <p className="text__body">
                 Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.
                 </p>
             </div>
@@ -26,12 +26,12 @@ const OurCompany = () => {
     </HeroSection>
     <section className="wordlclasstalent" id="worldclasstalent">
         <div className="box-media">
+            <Container className="rounded">
             <div className="media">
               <picture>
                 <img src="./about/mobile/image-world-class-talent.jpg" alt="" />
               </picture>
             </div>
-            <Container>
               <div className="content">
                     <h2 className="text-call-100">
                       World-class talent
