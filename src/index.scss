@@ -213,6 +213,9 @@ textarea{
     resize: vertical;
     font-family: "Jost";
 }
+.hero-container{
+
+}
 
 .container{
     margin-inline: 1em;
@@ -484,7 +487,7 @@ body{
     &:first-of-type{
         &::after{
             background-color: #000000;
-            opacity: 0.7;
+            opacity: 0.5;
         }
     }
     h2,a{

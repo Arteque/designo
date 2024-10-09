@@ -555,7 +555,7 @@ body[data-menu=open] .main-header .main-header__nav {
 }
 .card-shield:first-of-type::after {
   background-color: #000000;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 .card-shield h2, .card-shield a {
   z-index: 10;
