@@ -568,7 +568,7 @@ body[data-menu=open] .main-header .main-header__nav {
   padding: 2em;
   text-align: center;
   border-radius: 1em;
-  background-image: url(./shared/desktop/bg-pattern-call-to-action.svg);
+  background-image: url(/shared/desktop/bg-pattern-call-to-action.svg);
   background-position: center;
   -webkit-padding-after: 3.5em;
           padding-block-end: 3.5em;
