@@ -625,7 +625,58 @@ body{
     }
 }
 
-
+// Locations
+section#locations{
+    padding-block-start: 0;
+    margin-block: 0;
+    padding-block-end: 0;
+    background-image:unset;
+    .container{
+        padding-block: 0;
+        margin-inline:auto;
+    }
+    @include md{
+        .container{
+            background:unset;
+        }
+        .block-media{
+            margin-block-end: 5em;
+            .media, .content{
+                margin-block: 2rem;
+                overflow: hidden;
+                border-radius: 2em;
+                display:flex;
+                flex-flow: row wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                column-gap: 4em;
+            }
+            .content{
+                  text-align: left;
+                  padding-inline: 2em;
+                  padding-block: 4em;
+                  background-color: var(--call-300);
+                  background-image:url(./shared/desktop/bg-pattern-two-circles.svg);
+                  background-size: contain;
+                  background-position: center;
+                  h2{
+                    width: 100%;
+                    padding-inline: 0;
+                    margin-block: 0;
+                  }    
+                  address{
+                    padding: 0;
+                    h3{
+                        margin-block: 0;
+                    }
+                  } 
+                  .contact{
+                    padding: 0;
+                  }
+            }
+        }
+    }
+}
 //Main Footer
 .main-footer{
     background: var(--dark-100);

@@ -717,6 +717,72 @@ body[data-menu=open] .main-header .main-header__nav {
   }
 }
 
+section#locations {
+  -webkit-padding-before: 0;
+          padding-block-start: 0;
+  margin-block: 0;
+  -webkit-padding-after: 0;
+          padding-block-end: 0;
+  background-image: unset;
+}
+section#locations .container {
+  padding-block: 0;
+  margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  section#locations .container {
+    background: unset;
+  }
+  section#locations .block-media {
+    -webkit-margin-after: 5em;
+            margin-block-end: 5em;
+  }
+  section#locations .block-media .media, section#locations .block-media .content {
+    margin-block: 2rem;
+    overflow: hidden;
+    border-radius: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-column-gap: 4em;
+       -moz-column-gap: 4em;
+            column-gap: 4em;
+  }
+  section#locations .block-media .content {
+    text-align: left;
+    padding-inline: 2em;
+    padding-block: 4em;
+    background-color: var(--call-300);
+    background-image: url(./shared/desktop/bg-pattern-two-circles.svg);
+    background-size: contain;
+    background-position: center;
+  }
+  section#locations .block-media .content h2 {
+    width: 100%;
+    padding-inline: 0;
+    margin-block: 0;
+  }
+  section#locations .block-media .content address {
+    padding: 0;
+  }
+  section#locations .block-media .content address h3 {
+    margin-block: 0;
+  }
+  section#locations .block-media .content .contact {
+    padding: 0;
+  }
+}
+
 .main-footer {
   background: var(--dark-100);
   color: var(--light-100);
