@@ -349,6 +349,7 @@ body{
         }
 
     }
+    
     &.subpage{
         padding-block-end:50px;
         .container{
@@ -373,6 +374,39 @@ body{
         }
         @include md{
             height: 100svh;
+        }
+        @include lg{
+            max-width: 1111px;
+            min-height: auto;
+            height: auto;
+            .container{
+                display:flex;
+                .media {
+                    width: 40%;
+                    img{
+                        scale: 1.5;
+                        transform: translateY(40px);
+                    }
+                }
+                .content{
+                    padding-inline-start: 5em;
+                    width: 70%;
+                    h2{
+                        text-align: left;
+                        padding: 0;
+                        width: auto;
+                    }
+                    p{
+                        text-align: left;
+                        padding: 0;
+                        width: auto;
+                    }
+                    a{
+                       display: block;
+                       width: fit-content; 
+                    }
+                }
+            }
         }
     }
     &.locations{
@@ -425,13 +459,14 @@ body{
         background-position: center;
         padding-block-end: 3.5em;
         @include md{
+          
             h2{
-                max-width: 90%;
-                margin-inline:auto;
+                padding: 0;
+                margin: 0;
             }
             p{
-                max-width: 80%;
-                margin-inline:auto;
+                margin: 0;
+                padding: 0;
             }
         max-width:689px;
         margin-inline: auto;
@@ -441,7 +476,9 @@ body{
             grid-template-columns: 0.9fr 1fr;
             grid-template-rows: 1fr 1fr;
             padding-inline: 5em;
+            padding-block: 4em;
             max-width:1111px;
+
             .call-card__header{
                 grid-column: 1;
                 grid-row: 1;
@@ -453,6 +490,8 @@ body{
                 grid-row: 2;
                 padding: 0 2em;
                 text-align: left;
+                padding: 0;
+                align-self:center;
             }
             .call-card__footer{
                 grid-column:2;
@@ -470,22 +509,25 @@ body{
 .card-shield{
     position:relative;
     overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
     &.web-design{
-        background-image:url('./home/mobile/image-web-design.jpg');
+        background-image:url('/home/mobile/image-web-design.jpg');
+        
         @include md{
-            background-image:url('./home/tablet/image-web-design.jpg');
+            background-image:url('/home/tablet/image-web-design.jpg');
         }
         @include lg{
-            background-image:url('./home/desktop/image-web-design.jpg');
+            background-image:url('/home/desktop/image-web-design-large.jpg');
         }
     }
     &.app-design{
-        background-image:url('./home/mobile/image-app-design.jpg');
+        background-image:url('/home/mobile/image-app-design.jpg');
         @include md{
-            background-image:url('./home/tablet/image-app-design.jpg');
+            background-image:url('/home/tablet/image-app-design.jpg');
         }
         @include lg{
-            background-image:url('./home/desktop/image-app-design.jpg');
+            background-image:url('/home/desktop/image-app-design.jpg');
         }
     }
     &.graphic-design{
@@ -526,6 +568,23 @@ body{
         img{
             width: 10px;
             height: auto;
+        }
+    }
+}
+.services {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:1fr 1fr;
+        gap: 2em;
+        align-items: stretch;
+        .card-shield{
+            margin-block: 0 !important;
+            &.web-design{
+                grid-column:1;
+                grid-row: 1 / span 2;
+                // height: 100%;
+            }
         }
     }
 }
@@ -571,6 +630,10 @@ body{
                 }
             }
         }
+        @include lg{
+            display: unset;
+            text-align: center;
+        }
     }
     .card__header{
         background:url(./shared/desktop/bg-pattern-small-circle.svg);
@@ -586,6 +649,16 @@ body{
         display: block;
         margin:0 auto;
     }
+    }
+}
+.skills{
+    @include lg{
+        .container{
+            display: flex;
+            gap: 2em;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
     }
 }
 //boxmedia
