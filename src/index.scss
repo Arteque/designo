@@ -275,12 +275,22 @@ textarea{
 
 main .container:not(.hero .container){
     margin-block: 160px;
-    margin-inline:auto;
+    margin-inline: 1em;
     @include md{
+        margin-inline:auto;
         overflow: hidden;
     }
 }
-
+[data-location="aboutus"], [data-location="locations"]{
+    
+        .container{
+            margin-inline: 0 !important;
+            .content{
+                padding-inline: 2em;
+            }
+        }
+    
+}
 //MainHeader
 header{
     

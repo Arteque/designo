@@ -330,12 +330,20 @@ textarea {
 
 main .container:not(.hero .container) {
   margin-block: 160px;
-  margin-inline: auto;
+  margin-inline: 1em;
 }
 @media screen and (min-width: 768px) {
   main .container:not(.hero .container) {
+    margin-inline: auto;
     overflow: hidden;
   }
+}
+
+[data-location=aboutus] .container, [data-location=locations] .container {
+  margin-inline: 0 !important;
+}
+[data-location=aboutus] .container .content, [data-location=locations] .container .content {
+  padding-inline: 2em;
 }
 
 header.main-header {
