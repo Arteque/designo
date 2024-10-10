@@ -35,7 +35,22 @@ const Contact = () => {
     e.preventDefault()
     if(!error){
       //Sendform
-    }
+      const name = e.target[3].value
+      const mail = e.target[4].value
+      const phone = e.target[5].value
+      const message = e.target[6].value
+
+      /*
+      location.search = {
+        "name":name,
+        "mail":mail,
+        "phone":phone,
+        "message": message
+      }
+    */
+      console.log(location.search)
+    window.location.href = `sendform?name=${encodeURI(encodeURI(name))}&mail=${mail}&phone=${phone}&message=${encodeURI(message)}`
+}
   }
 
   return (
@@ -83,12 +98,14 @@ const Contact = () => {
                     <div className="data">
                         <label htmlFor="name">
                             <input className="padding" 
-                            type="text" 
+                            type="text"
+                            pattern="[a-zA-Z\s]+"
                             name="name" 
                             id="name" 
                             placeholder="Name" 
                             required
                             onChange={handleInputChange}
+                            title="Only a-z or A-Z and white space are authorised"
                             />
                             <span className="input__info">
                                 <span>Can’t be empty</span>
@@ -111,11 +128,14 @@ const Contact = () => {
                         </label>
                         <label htmlFor="phone">
                             <input className="padding" 
-                            type="tel"
+                            type="text"
+                            pattern="[0-9]+"
                             name="phone" 
                             id="phone" 
                             placeholder="Phone" 
-                            onChange={handleInputChange} 
+                            onChange={handleInputChange}
+                            title="Only number from 0 - 9 are allowed" 
+                            required
                             />
                             <span className="input__info">
                                 <span>Can’t be empty</span>

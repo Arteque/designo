@@ -70,7 +70,7 @@ const AppDesign = () => {
                         <h2 className="heading__lg uppercase text-call-100">{item.title}</h2>
                         }
                         footerChilds={
-                        <p className="padding">
+                        <p className="text__body padding">
                             {item.text}
                         </p>
                         

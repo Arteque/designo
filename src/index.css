@@ -77,6 +77,30 @@ html, body {
   letter-spacing: 2px;
 }
 
+body {
+  background-image: url(/shared/desktop/bg-pattern-leaf.svg);
+  background-position: left 50svh;
+  background-repeat: no-repeat;
+}
+body[data-location=contact], body[data-location=locations] {
+  background-image: unset;
+}
+body[data-location=""]::before, body[data-location=aboutus]::before, body[data-location=contact]::before {
+  content: "";
+  position: absolute;
+  top: 150svh;
+  width: 100%;
+  background-image: url(/shared/desktop/bg-pattern-leaf.svg);
+  background-position: 150% top;
+  height: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+body[data-location=contact]::before {
+  top: 90svh;
+  background-position: right top;
+}
+
 img {
   width: 100%;
   display: block;
@@ -180,6 +204,7 @@ address {
   display: inline-block;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 .btn.-inline {
   color: var(--light-100);
@@ -195,8 +220,9 @@ address {
   background: var(--call-100);
   color: var(--light-100);
 }
-.btn:hover:not(.main-header a) {
+.btn:hover:not(.main-header a):not(.main-footer a) {
   background: var(--call-200);
+  color: var(--light-100);
 }
 
 label {
@@ -349,6 +375,30 @@ header .main-header__nav ul a {
   color: var(--light-100);
   padding: 1em 0;
   display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+}
+header .main-header__nav ul a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline: 100%;
+  opacity: 0;
+  height: 2px;
+  background-color: var(--dark-200);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+header .main-header__nav ul a.current::after {
+  opacity: 1;
+  inset-inline: 0;
+}
+@media screen and (min-width: 768px) {
+  header .main-header__nav ul a:hover::after {
+    opacity: 1;
+    inset-inline: 0;
+  }
 }
 @media screen and (min-width: 768px) {
   header .main-header__nav {
@@ -476,6 +526,7 @@ body[data-menu=open] .main-header .main-header__nav {
 .hero.subpage {
   -webkit-padding-after: 50px;
           padding-block-end: 50px;
+  background-position: center left;
 }
 .hero.subpage .container {
   background-position: 100%;
@@ -715,20 +766,20 @@ section.locations .container .contact {
   }
 }
 .card-shield.graphic-design {
-  background-image: url("./home/mobile/image-graphic-design.jpg");
+  background-image: url("/home/mobile/image-graphic-design.jpg");
 }
 @media screen and (min-width: 768px) {
   .card-shield.graphic-design {
-    background-image: url("./home/tablet/image-graphic-design.jpg");
+    background-image: url("/home/tablet/image-graphic-design.jpg");
   }
 }
 @media screen and (min-width: 1024px) {
   .card-shield.graphic-design {
-    background-image: url("./home/desktop/image-graphic-design.jpg");
+    background-image: url("/home/desktop/image-graphic-design.jpg");
   }
 }
 .card-shield:hover::after {
-  background-color: #000000;
+  background-color: var(--call-200);
   opacity: 0.7;
 }
 .card-shield::after {
@@ -761,6 +812,16 @@ section.locations .container .contact {
 .card-shield a img {
   width: 10px;
   height: auto;
+}
+.card-shield a:hover {
+  background-color: transparent !important;
+}
+.card-shield a.absolute-link {
+  position: absolute;
+  inset: 0;
+}
+.card-shield a.absolute-link span {
+  opacity: 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -857,7 +918,7 @@ section.locations .container .contact {
   }
 }
 .card .card__header {
-  background: url(./shared/desktop/bg-pattern-small-circle.svg);
+  background: url(/shared/desktop/bg-pattern-small-circle.svg);
   background-size: cover;
   background-position: left;
   width: 100%;
@@ -898,7 +959,7 @@ section.locations .container .contact {
 }
 
 section.about-content .box-media .container {
-  background-image: url(./shared/desktop/bg-pattern-three-circles.svg);
+  background-image: url(/shared/desktop/bg-pattern-three-circles.svg);
   background-size: contain;
 }
 @media screen and (min-width: 1024px) {
@@ -960,18 +1021,36 @@ section.about-content .box-media .container {
     -webkit-column-gap: 2em;
        -moz-column-gap: 2em;
             column-gap: 2em;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
   .projects .card .card__header {
     grid-column: 1;
     grid-row: 1/span 2;
   }
+  .projects .card .card__header h2 {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
   .projects .card .card__body {
     -ms-flex-item-align: end;
         align-self: end;
   }
+  .projects .card .card__body p {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
   .projects .card .card__footer .text__body {
     margin-block: 0;
   }
+}
+.projects .container .card:hover {
+  background-color: var(--call-200);
+  color: var(--light-100);
+}
+.projects .container .card:hover h2 {
+  color: var(--light-100);
 }
 @media screen and (min-width: 1024px) {
   .projects .container {
@@ -1033,7 +1112,7 @@ section#locations .container {
     padding-inline: 2em;
     padding-block: 4em;
     background-color: var(--call-300);
-    background-image: url(./shared/desktop/bg-pattern-two-circles.svg);
+    background-image: url(/shared/desktop/bg-pattern-two-circles.svg);
     background-size: contain;
     background-position: center;
   }
@@ -1140,6 +1219,30 @@ section#locations .container {
   color: var(--light-100);
   margin-block: 0.5em;
   font-weight: 300;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+}
+.main-footer nav ul a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline: 100%;
+  opacity: 0;
+  height: 2px;
+  background-color: var(--dark-200);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.main-footer nav ul a.current::after {
+  opacity: 1;
+  inset-inline: 0;
+}
+@media screen and (min-width: 768px) {
+  .main-footer nav ul a:hover::after {
+    opacity: 1;
+    inset-inline: 0;
+  }
 }
 .main-footer address, .main-footer .contact {
   color: var(--light-200);

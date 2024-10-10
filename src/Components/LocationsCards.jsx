@@ -15,14 +15,14 @@ const LocationsCards = () => {
           imgSrc:"./shared/desktop/illustration-australia.svg",
           title:"Australia",
           linkText: "See Location",
-          url:"/locations#australia"
+          url:"/locations#Australia"
         },
         {
           id:3,
           imgSrc:"./shared/desktop/illustration-united-kingdom.svg",
           title:"United Kingdom",
           linkText: "See Location",
-          url:"/locations#unitedkingdom"
+          url:"/locations#United Kingdom"
         }
     ]
 
@@ -30,7 +30,7 @@ const LocationsCards = () => {
     <>
         {
             data && data.map(item => (
-              <Card key={item.id} className="locations-card-media padding"
+              <Card key={item.id} className={`locations-card-media padding ${item.title}`} id={item.title}
                 headerChilds={
                   <img src={item.imgSrc} alt={item.title} />
                 }

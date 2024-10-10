@@ -77,7 +77,7 @@ const WebDesign = () => {
                   <h2 className="heading__lg uppercase text-call-100">{item.title}</h2>
                 }
                 footerChilds={
-                  <p className="text__body">
+                  <p className="text__body padding">
                     {item.text}
                   </p>
                 

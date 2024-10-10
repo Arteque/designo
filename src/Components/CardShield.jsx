@@ -21,6 +21,11 @@ const CardShield = ({cardTitle, url, linkText, className,cardtitle}) => {
             <span>{linkText}</span>
             <img src="./shared/desktop/icon-right-arrow.svg" alt="Arrow Right" />
         </Link>
+        <Link to={url}
+        className="absolute-link"
+        >
+            <span>{linkText}</span>
+        </Link>
     </div>
   )
 }

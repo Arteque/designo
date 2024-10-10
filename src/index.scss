@@ -52,7 +52,36 @@ html,body{
     margin: 0;
     padding: 0;
     letter-spacing: 2px;
-    // background: var(--call-100);
+    
+}
+body{
+        background-image: url(/shared/desktop/bg-pattern-leaf.svg);
+        background-position:left 50svh;
+        background-repeat:no-repeat;
+     
+    &[data-location="contact"], &[data-location="locations"]{
+        background-image:unset;
+    }
+    
+    &[data-location=""], &[data-location="aboutus"], &[data-location="contact"]{
+        &::before {
+            content: "";
+            position: absolute;
+            top: 150svh;
+            width: 100%;
+            background-image: url(/shared/desktop/bg-pattern-leaf.svg);
+            background-position: 150% top;
+            height: 100%;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+    }
+    &[data-location="contact"]{
+        &::before{
+            top: 90svh;
+            background-position: right top;
+        }
+    }
 }
 img{
     width: 100%;
@@ -134,7 +163,9 @@ address{
     font-weight: 600;
     display: inline-block;
     border: none;
-    background: transparent; 
+    background: transparent;
+   
+    cursor: pointer;
     &.-inline{ 
         color: var(--light-100);
     }
@@ -149,10 +180,13 @@ address{
         background: var(--call-100);
         color: var(--light-100);
     }
-    &:hover:not(.main-header a){
+    &:hover:not(.main-header a):not(.main-footer a){
         background:var(--call-200);
+        color: var(--light-100)
     }
 }
+
+
 label{
     position:relative;
     width: 100%;
@@ -264,6 +298,7 @@ header{
             padding: 0;
             background-color: transparent;
         }
+        
     }
     .main-header__nav{
         background-color: var(--dark-100);
@@ -282,6 +317,34 @@ header{
                 color: var(--light-100);
                 padding:1em 0;
                 display: block;
+                transition: all 0.3s;
+                position:relative;
+                &::after{
+                    content:"";
+                    position:absolute;
+                    bottom: 0;
+                    inset-inline: 100%;
+                    opacity: 0;
+                    height: 2px;
+                    background-color:var(--dark-200);
+                    transition: all 0.3s;
+                }
+                &.current{
+                    &::after{
+                        opacity: 1;
+                        inset-inline: 0;
+                    }
+                }
+                @include md{
+                    &:hover{
+                        &::after{
+                            opacity: 1;
+                            inset-inline: 0;
+                        }
+                    }
+                }
+            
+                
             }
         }
         @include md{
@@ -398,9 +461,10 @@ body{
     }
     &.subpage{
         padding-block-end:50px;
+        background-position: center left; 
         .container{
             background-position: 100%;
-            background-size:300%; 
+            background-size:300%;
             p{
                 max-width: 550px;
                 margin-inline:auto;
@@ -619,17 +683,17 @@ section{
         }
     }
     &.graphic-design{
-        background-image:url('./home/mobile/image-graphic-design.jpg');
+        background-image:url('/home/mobile/image-graphic-design.jpg');
         @include md{
-            background-image:url('./home/tablet/image-graphic-design.jpg');
+            background-image:url('/home/tablet/image-graphic-design.jpg');
         }
         @include lg{
-            background-image:url('./home/desktop/image-graphic-design.jpg');
+            background-image:url('/home/desktop/image-graphic-design.jpg');
         }
     }
     &:hover{
         &::after{
-            background-color: #000000;
+            background-color: var(--call-200);
             opacity: 0.7;
         }
     }
@@ -656,6 +720,16 @@ section{
         img{
             width: 10px;
             height: auto;
+        }
+        &:hover{
+            background-color:transparent !important;
+        }
+        &.absolute-link{
+            position:absolute;
+            inset: 0;
+            span{
+                opacity: 0;
+            }
         }
     }
 }
@@ -736,7 +810,7 @@ section{
         }
     }
     .card__header{
-        background:url(./shared/desktop/bg-pattern-small-circle.svg);
+        background:url(/shared/desktop/bg-pattern-small-circle.svg);
         background-size: cover;
         background-position:left;
         width: 100%; 
@@ -776,7 +850,7 @@ section{
 section.about-content{
     .box-media{
         .container{
-            background-image:url(./shared/desktop/bg-pattern-three-circles.svg);
+            background-image:url(/shared/desktop/bg-pattern-three-circles.svg);
             background-size: contain;
             @include lg{
                 display: flex;
@@ -818,7 +892,7 @@ section.about-content{
         justify-content: space-between;
     }
 }
-//Subpages
+//Subpagestext__body
 //projects
 .projects{
     .card{
@@ -827,16 +901,36 @@ section.about-content{
             grid-template-columns:1fr 1fr;
             grid-template-rows:1fr 1fr;
             column-gap: 2em;
+            cursor: pointer;
+            transition: all 0.3s;
             .card__header{
                 grid-column: 1;
                 grid-row: 1 / span 2;
+                h2{
+                    transition: all 0.3s;
+                }
             }
             .card__body{
                 align-self:end;
+                p{
+                    transition: all 0.3s;   
+                }
             }
             .card__footer{
                 .text__body{
                     margin-block: 0;
+                }
+            }
+        }
+        
+    }
+    .container{
+        .card{
+            &:hover{
+                background-color: var(--call-200);
+                color: var(--light-100);
+                h2{
+                    color: var(--light-100);
                 }
             }
         }
@@ -887,7 +981,7 @@ section#locations{
                   padding-inline: 2em;
                   padding-block: 4em;
                   background-color: var(--call-300);
-                  background-image:url(./shared/desktop/bg-pattern-two-circles.svg);
+                  background-image:url(/shared/desktop/bg-pattern-two-circles.svg);
                   background-size: contain;
                   background-position: center;
                   h2{
@@ -985,6 +1079,32 @@ section#locations{
                 color: var(--light-100);
                 margin-block: .5em;
                 font-weight: 300;
+                transition: all 0.3s;
+                position:relative;
+                &::after{
+                    content:"";
+                    position:absolute;
+                    bottom: 0;
+                    inset-inline: 100%;
+                    opacity: 0;
+                    height: 2px;
+                    background-color:var(--dark-200);
+                    transition: all 0.3s;
+                }
+                &.current{
+                    &::after{
+                        opacity: 1;
+                        inset-inline: 0;
+                    }
+                }
+                @include md{
+                    &:hover{
+                        &::after{
+                            opacity: 1;
+                            inset-inline: 0;
+                        }
+                    }
+                }
             }
         }
     }

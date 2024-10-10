@@ -51,7 +51,7 @@ const Locations = () => {
       <section className="locations" id="locations">
         {
           data && data.map(item => (
-            <div className="block-media" key={item.id}>
+            <div className="block-media" id={item.address.land} key={item.id}>
             <Container>
               <div className="media">
                     <iframe 

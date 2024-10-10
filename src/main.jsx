@@ -17,6 +17,8 @@ import Locations from './Pages/Locations'
 import WebDesign from './Pages/WebDesign'
 import AppDesign from './Pages/AppDesign'
 import GraphicDesign from './Pages/GraphicDesign'
+import SendForm from './Pages/sendForm'
+import LoadSpin from './Components/Assets/LoadSpin'
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,7 @@ const router = createBrowserRouter([
     path:"/",
     element:<Layout />,
     errorElement: <ErrorPage />,
+    
     children:[
       {
         path:"/",
@@ -52,6 +55,10 @@ const router = createBrowserRouter([
       {
         path:"/graphicdesign",
         element: <GraphicDesign />
+      },
+      {
+        path:"/sendform",
+        element: <SendForm />
       }
     ]
   }

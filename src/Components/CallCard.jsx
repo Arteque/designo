@@ -14,7 +14,7 @@ const CallCard = () => {
                 </p>
             </div>
             <div className="call-card__footer">
-                <Link to="#" className="btn -full padding rounded">
+                <Link to="/contact" className="btn -full padding rounded">
                     Get in touch
                 </Link>
             </div>

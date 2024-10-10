@@ -31,8 +31,8 @@ const OurCompany = () => {
             <Container className="rounded bg-call-300">
             <div className="media">
               <picture>
-                <source media="(min-width: 968px)" srcset="./about/desktop/image-world-class-talent.jpg" />
-                <source media="(min-width: 768px)" srcset="./about/tablet/image-world-class-talent.jpg" />
+                <source media="(min-width: 968px)" srcSet="./about/desktop/image-world-class-talent.jpg" />
+                <source media="(min-width: 768px)" srcSet="./about/tablet/image-world-class-talent.jpg" />
                 <img src="./about/mobile/image-world-class-talent.jpg" alt="" />
               </picture>
             </div>
@@ -60,8 +60,8 @@ const OurCompany = () => {
             <Container className="rounded bg-call-300">
               <div className="media">
                 <picture>
-                  <source media="(min-width: 968px)" srcset="./about/desktop/image-real-deal.jpg" />
-                  <source media="(min-width: 768px)" srcset="./about/tablet/image-real-deal.jpg" />
+                  <source media="(min-width: 968px)" srcSet="./about/desktop/image-real-deal.jpg" />
+                  <source media="(min-width: 768px)" srcSet="./about/tablet/image-real-deal.jpg" />
                   <img src="./about/mobile/image-real-deal.jpg" alt="The real deal" />
                 </picture>
               </div>

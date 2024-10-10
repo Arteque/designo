@@ -57,7 +57,7 @@ const GraphicDesign = () => {
                 <h2 className="heading__lg uppercase text-call-100">{item.title}</h2>
                 }
                 footerChilds={
-                <p>
+                <p className="text__body padding">
                     {item.text}
                 </p>
                 

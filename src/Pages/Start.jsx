@@ -3,19 +3,19 @@ import Container from "../Components/Assets/Container"
 import DeisgnTypes from "../Components/Assets/DeisgnTypes"
 import CallCard from "../Components/CallCard"
 import Card from "../Components/Card"
-import CardShield from "../Components/CardShield"
 import HeroSection from "../Components/HeroSection"
 import { Link } from "react-router-dom"
 
 const Start = () => {
   return (
     <>
+  
       <HeroSection className="start bg-call-100" id="hero">
          <Container>
               <div className="content">
                   <h2 className="heading__lg">Award-winning custom designs and digital branding solutions</h2>
                   <p className="text__body">With over 10 years in the industry, we are experienced in creating fully responsive websites, apps, and engaging brand experiences. Find out more about our services.</p>
-                  <Button className="-full padding -inline -block rounded">Learn more</Button>
+                  <Link to="/aboutus" className="btn -full padding -inline -block rounded">Learn more</Link>
               </div>
               <div className="media">
                 <img src="./home/desktop/image-hero-phone.png" alt="Image Hero Phone" />
