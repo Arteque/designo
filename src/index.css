@@ -660,21 +660,23 @@ body[data-menu=open] .main-header .main-header__nav {
   height: auto;
 }
 
-.services .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2em;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-.services .grid-container .card-shield {
-  margin-block: 0 !important;
-}
-.services .grid-container .card-shield.web-design {
-  grid-column: 1;
-  grid-row: 1/span 2;
+@media screen and (min-width: 1024px) {
+  .services .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .services .grid-container .card-shield {
+    margin-block: 0 !important;
+  }
+  .services .grid-container .card-shield.web-design {
+    grid-column: 1;
+    grid-row: 1/span 2;
+  }
 }
 
 .card {
