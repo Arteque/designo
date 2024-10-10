@@ -5,7 +5,7 @@ import CallCard from "../Components/CallCard"
 import LocationsCards from "../Components/LocationsCards"
 
 
-const SendForm = () => {
+const Mail = () => {
 
     const location = useLocation()
 
@@ -46,4 +46,4 @@ const SendForm = () => {
   )
 }
 
-export default SendForm
+export default Mail

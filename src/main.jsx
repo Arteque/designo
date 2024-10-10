@@ -17,7 +17,7 @@ import Locations from './Pages/Locations'
 import WebDesign from './Pages/WebDesign'
 import AppDesign from './Pages/AppDesign'
 import GraphicDesign from './Pages/GraphicDesign'
-import SendForm from './Pages/sendForm'
+import Mail from './Pages/Mail'
 import LoadSpin from './Components/Assets/LoadSpin'
 
 
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/sendform",
-        element: <SendForm />
+        element: <Mail />
       }
     ]
   }
