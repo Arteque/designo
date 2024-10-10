@@ -48,7 +48,7 @@ const Locations = () => {
 
   return (
     <>
-      <HeroSection className="locations" id="locations">
+      <section className="locations" id="locations">
         {
           data && data.map(item => (
             <div className="block-media" key={item.id}>
@@ -81,7 +81,7 @@ const Locations = () => {
           ))
         }
      
-      </HeroSection>
+      </section>
       <CallCard />
     </>
   )

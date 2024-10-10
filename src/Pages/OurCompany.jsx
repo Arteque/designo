@@ -1,10 +1,12 @@
 import HeroSection from "../Components/HeroSection"
 import Container from "../Components/Assets/Container"
-import Card from "../Components/Card"
-import { Link } from "react-router-dom"
 import CallCard from "../Components/CallCard"
+import LocationsCards from "../Components/LocationsCards"
 
 const OurCompany = () => {
+
+  
+
   return (
     <>
       <HeroSection className="aboutus nopaddingtop bg-call-100" id="aboutus">
@@ -24,15 +26,17 @@ const OurCompany = () => {
             </div>
         </Container>
     </HeroSection>
-    <section className="wordlclasstalent" id="worldclasstalent">
+    <section className="about-content" id="worldclasstalent">
         <div className="box-media">
-            <Container className="rounded">
+            <Container className="rounded bg-call-300">
             <div className="media">
               <picture>
+                <source media="(min-width: 968px)" srcset="./about/desktop/image-world-class-talent.jpg" />
+                <source media="(min-width: 768px)" srcset="./about/tablet/image-world-class-talent.jpg" />
                 <img src="./about/mobile/image-world-class-talent.jpg" alt="" />
               </picture>
             </div>
-              <div className="content">
+              <div className="content ">
                     <h2 className="text-call-100">
                       World-class talent
                     </h2>
@@ -47,56 +51,21 @@ const OurCompany = () => {
         </div>
     </section>
     <section className="ourlocations" id="ourlocations">
-        <Container>
-          <Card 
-            headerChilds={
-              <img src="./shared/desktop/illustration-canada.svg" alt="Austria" />
-            }
-            bodyChilds={
-              <h2 className="heading__lg uppercase">Canada</h2>
-            }
-            footerChilds={
-              <Link className="btn -call rounded padding -inline margin-block-end" to="locations">
-                See Location
-              </Link>
-            }
-          />
-          <Card 
-            headerChilds={
-              <img src="./shared/desktop/illustration-australia.svg" alt="Austria" />
-            }
-            bodyChilds={
-              <h2 className="heading__lg uppercase">Australia</h2>
-            }
-            footerChilds={
-              <Link className="btn -call rounded padding -inline margin-block-end" to="/locations">
-                See Location
-              </Link>
-            }
-          />
-          <Card 
-            headerChilds={
-              <img src="./shared/desktop/illustration-united-kingdom.svg" alt="Austria" />
-            }
-            bodyChilds={
-              <h2 className="heading__lg uppercase">United Kingdom</h2>
-            }
-            footerChilds={
-              <Link className="btn -call rounded padding -inline margin-block-end" to="/locations">
-                See Location
-              </Link>
-            }
-          />
+        <Container className="locations-cards-container">
+          <LocationsCards />         
         </Container>
     </section>
-    <section className="margin-block-end">
-    <div className="box-media bg-call-300">
-            <div className="media">
-              <picture>
-                <img src="./about/mobile/image-real-deal.jpg" alt="The real deal" />
-              </picture>
-            </div>
-            <Container>
+    <section className="about-content margin-block-end">
+    <div className="box-media ">
+            <Container className="rounded bg-call-300">
+              <div className="media">
+                <picture>
+                  <source media="(min-width: 968px)" srcset="./about/desktop/image-real-deal.jpg" />
+                  <source media="(min-width: 768px)" srcset="./about/tablet/image-real-deal.jpg" />
+                  <img src="./about/mobile/image-real-deal.jpg" alt="The real deal" />
+                </picture>
+              </div>
+            
               <div className="content">
                     <h2 className="text-call-100">
                     The real deal
