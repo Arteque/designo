@@ -1,8 +1,8 @@
-import HeroSection from "./HeroSection"
-import Container from "./Assets/Container"
+import HeroSection from "../Components/HeroSection"
+import Container from "../Components/Assets/Container"
 import { useLocation } from "react-router-dom"
-import CallCard from "./CallCard"
-import LocationsCards from "./LocationsCards"
+import CallCard from "../Components/CallCard"
+import LocationsCards from "../Components/LocationsCards"
 
 
 const SendForm = () => {

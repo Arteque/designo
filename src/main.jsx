@@ -17,7 +17,7 @@ import Locations from './Pages/Locations'
 import WebDesign from './Pages/WebDesign'
 import AppDesign from './Pages/AppDesign'
 import GraphicDesign from './Pages/GraphicDesign'
-import SendForm from './Components/SendForm'
+import SendForm from './Pages/SendForm'
 import LoadSpin from './Components/Assets/LoadSpin'
 
 
