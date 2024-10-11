@@ -38,7 +38,19 @@ This project allowed me to refine my existing expertise with **React.js**, **Rea
 
 ### Continued Development
 
-In the ongoing enhancement of the project, I have successfully added an extra **spam filter** to the contact form on the subpage. This implementation includes robust validation to minimize spam submissions and displays an error message to users when spam is detected. Additionally, I have integrated a confirmation component that appears once a message is successfully submitted. This feature provides users with immediate feedback, assuring them that their message has been received, thereby improving the overall user experience on the contact form.
+In the ongoing enhancement of the project, I have successfully added an extra **spam filter** to the contact form on the subpage. 
+
+![](./formantyspaminputs.png)
+
+This implementation includes robust validation to minimize spam submissions and displays an error message to users when spam is detected. 
+
+![](./ifhiddeninputiswritenmessageonsubmit.png)
+
+Additionally, I have integrated a confirmation component that appears once a message is successfully submitted. 
+
+![](./formmessageonsuccesssubmit.png)
+
+This feature provides users with immediate feedback, assuring them that their message has been received, thereby improving the overall user experience on the contact form.
 
 ### Author
 
