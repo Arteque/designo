@@ -13,7 +13,7 @@ const Layout = () => {
 
   useEffect(() => {
     document.body.dataset.location = location.pathname.replace(/[/#]/g, "").trim().toLocaleLowerCase() 
-    
+    window.scrollTo(0,0)
   },[location])
 
   return (
