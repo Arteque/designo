@@ -1,6 +1,6 @@
 ## Project Designo | Award-wining custom designs and digital brand solutions angency
-- ![Project on Github](https://github.com/Arteque/designo)
-- ![Project live](https://designo-zeta-opal.vercel.app/)
+- [Project on Github](https://github.com/Arteque/designo)
+- [Project live](https://designo-zeta-opal.vercel.app/)
 
 ### Table of contents
 
