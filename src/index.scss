@@ -239,6 +239,7 @@ input, textarea{
             white-space: nowrap;
         }
     }
+    /*
     &:required{
         &:invalid{
             & + .input__info{
@@ -248,7 +249,7 @@ input, textarea{
         
         
     }
-    
+    */
     &::placeholder{
         color:var(--light-100);
     }
@@ -283,10 +284,13 @@ main .container:not(.hero .container){
 }
 [data-location="aboutus"], [data-location="locations"]{
     
-        .container{
+        .container:not(.hero .container):not(.main-header .container){
             margin-inline: 0 !important;
             .content{
                 padding-inline: 2em;
+            }
+            @include md{
+                margin-inline:auto !important;
             }
         }
     

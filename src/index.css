@@ -258,6 +258,17 @@ input, textarea {
   letter-spacing: 1px;
   margin-block: 1em;
   width: 100%;
+  /*
+  &:required{
+      &:invalid{
+          & + .input__info{
+              opacity: 1;
+          } 
+      }
+
+
+  }
+  */
 }
 input + .input__info, textarea + .input__info {
   position: absolute;
@@ -286,9 +297,6 @@ input + .input__info, textarea + .input__info {
 }
 input + .input__info span, textarea + .input__info span {
   white-space: nowrap;
-}
-input:required:invalid + .input__info, textarea:required:invalid + .input__info {
-  opacity: 1;
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: var(--light-100);
@@ -339,11 +347,16 @@ main .container:not(.hero .container) {
   }
 }
 
-[data-location=aboutus] .container, [data-location=locations] .container {
+[data-location=aboutus] .container:not(.hero .container):not(.main-header .container), [data-location=locations] .container:not(.hero .container):not(.main-header .container) {
   margin-inline: 0 !important;
 }
-[data-location=aboutus] .container .content, [data-location=locations] .container .content {
+[data-location=aboutus] .container:not(.hero .container):not(.main-header .container) .content, [data-location=locations] .container:not(.hero .container):not(.main-header .container) .content {
   padding-inline: 2em;
+}
+@media screen and (min-width: 768px) {
+  [data-location=aboutus] .container:not(.hero .container):not(.main-header .container), [data-location=locations] .container:not(.hero .container):not(.main-header .container) {
+    margin-inline: auto !important;
+  }
 }
 
 header.main-header {

@@ -6,6 +6,7 @@ import {
   RouterProvider
 } from "react-router-dom"
 
+
 import Layout from './Layout/Layout'
 import Start from './Pages/Start'
 import ErrorPage from './Pages/ErrorPage'
@@ -17,8 +18,7 @@ import Locations from './Pages/Locations'
 import WebDesign from './Pages/WebDesign'
 import AppDesign from './Pages/AppDesign'
 import GraphicDesign from './Pages/GraphicDesign'
-import Mail from './Pages/Mail'
-import LoadSpin from './Components/Assets/LoadSpin'
+
 
 
 const router = createBrowserRouter([ 
@@ -26,7 +26,6 @@ const router = createBrowserRouter([
     path:"/",
     element:<Layout />,
     errorElement: <ErrorPage />,
-    
     children:[
       {
         path:"/",
@@ -55,18 +54,16 @@ const router = createBrowserRouter([
       {
         path:"/graphicdesign",
         element: <GraphicDesign />
-      },
-      {
-        path:"/sendform",
-        element: <Mail />
       }
     ]
   }
+  
 ])
 
 
 createRoot(document.getElementById('root')).render(
+  
   <StrictMode>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   </StrictMode>,
 )
