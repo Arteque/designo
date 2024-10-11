@@ -424,6 +424,7 @@ body{
     background-position: center right;  
     background-size: contain; 
     background-repeat: no-repeat;
+    
     @include md{
        
         max-width: 689px;
@@ -494,6 +495,7 @@ body{
             img{
                 scale: 2;
                 transform: translateY(70px);
+                pointer-events: none;
                 @include md{
                     scale: 1.4;
                     transform: translateY(70px);

@@ -564,6 +564,7 @@ body[data-menu=open] .main-header .main-header__nav {
   scale: 2;
   -webkit-transform: translateY(70px);
           transform: translateY(70px);
+  pointer-events: none;
 }
 @media screen and (min-width: 768px) {
   .hero.start .media img {
