@@ -15,7 +15,7 @@ const Contact = () => {
       e.target.nextElementSibling.firstElementChild.innerText = "Can't be empty"
       e.target.nextElementSibling.style = "opacity:1"
     }
-    if(e.target.value.length <= 2){
+    if(e.target.value.length <= 2 && e.target.value.length > 0){
       e.target.nextElementSibling.firstElementChild.innerText = "Text too short"
       e.target.nextElementSibling.style = "opacity:1"
     }
